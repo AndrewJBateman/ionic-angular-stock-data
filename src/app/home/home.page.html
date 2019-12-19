@@ -1,14 +1,46 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Data Charts
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="stock" placeholder="AAPL, MSFT..."></ion-input>
+    <ion-button slot="end" expand="full" (click)="getData()" [disabled]="stock == ''">
+      <ion-icon slot="start" name="search"></ion-icon>
+      Search
+    </ion-button>
+  </ion-item>
+ 
+  <canvas baseChart 
+    [datasets]="chartData" 
+    [labels]="chartLabels" 
+    [options]="chartOptions" 
+    [colors]="chartColors"
+    [legend]="showLegend" 
+    [chartType]="chartType">
+  </canvas>
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Settings</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Line chart?</ion-label>
+        <ion-toggle (ionChange)="typeChanged($event)" checked></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Show legend?</ion-label>
+        <ion-toggle [(ngModel)]="showLegend"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Background color</ion-label>
+        <ion-input type="text" [(ngModel)]="chartColors[0].backgroundColor"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
