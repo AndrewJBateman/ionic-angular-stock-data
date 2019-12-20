@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
 import { ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 

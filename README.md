@@ -1,6 +1,6 @@
 # Ionic Angular Charts
 
-App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs). This is another great tutorial from [Simon Grimm IonicAcademy Youtube video 'How to Build Ionic 4 Apps with Chart.js'](https://www.youtube.com/watch?v=8sd99RJeYSk).
+App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs). This is another great tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/watch?v=8sd99RJeYSk).
 
 ## Table of contents
 
@@ -25,16 +25,17 @@ App to chart historic stock prices from the [FMP financial data API](https://fin
 
 ## Technologies
 
-* [Ionic v5.0.0](https://ionicframework.com/)
+* [Ionic v5.0.0](https://ionicframework.com/) framework.
 * [Ionic/angular v4.7.1](https://ionicframework.com/)
-* [ng2-charts v2.3.0](https://valor-software.com/ng2-charts/) line chart.
+* [rxjs library v6.5.1](https://angular.io/guide/rx-library) reactive prrogramming.
+* [ng2-charts v2.3.0](https://valor-software.com/ng2-charts/) line & bar charts.
 * [chart.js v2.9.3](https://www.chartjs.org/) datasets.
 * [chartjs-plugin-zoom v0.7.5](https://github.com/chartjs/chartjs-plugin-zoom)
-* [financial data API](https://financialmodelingprep.com/developer/docs)
+* [FMP financial data API](https://financialmodelingprep.com/developer/docs)
 
 ## Setup
 
-* To start the server on _localhost://8100_ type: 'ionic serve'
+* To start the server on _localhost://8100_ type: 'ionic serve -o'
 
 ## Code Examples
 
@@ -55,14 +56,13 @@ getData() {
           this.chartLabels.push(entry.date);
           this.chartData[0].data.push(entry.close);
         }
-        console.log('chart data: ', this.chartData[0].data);
       });
 }
 ```
 
 ## Features
 
-* ng2-charts has 8 types of charts: line, bar, radar, pie, polarArea, doughnut, bubble and scatter. The user can choose between line (default) and bar charts.
+* ng2-charts has 8 types of charts: line, bar, radar, pie, polarArea, doughnut, bubble and scatter. In this app the user can choose between line (default) and bar charts.
 
 ## Status & To-do list
 
