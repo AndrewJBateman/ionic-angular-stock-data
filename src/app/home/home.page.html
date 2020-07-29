@@ -5,25 +5,25 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content>
   <ion-item>
-    <ion-input type="text" [(ngModel)]="stock" placeholder="AAPL, MSFT..."></ion-input>
+    <ion-input type="text" [(ngModel)]="stock" placeholder="Enter stock - AAPL, MSFT..."></ion-input>
     <ion-button slot="end" expand="full" (click)="getData()" [disabled]="stock == ''">
       <ion-icon slot="start" name="search"></ion-icon>
       Search
     </ion-button>
   </ion-item>
- 
-  <canvas baseChart 
-    [datasets]="chartData" 
-    [labels]="chartLabels" 
-    [options]="chartOptions" 
+
+  <canvas baseChart
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
     [colors]="chartColors"
-    [legend]="showLegend" 
+    [legend]="showLegend"
     [chartType]="chartType">
   </canvas>
- 
+
   <ion-card>
     <ion-card-header>
       <ion-card-title>Settings</ion-card-title>
