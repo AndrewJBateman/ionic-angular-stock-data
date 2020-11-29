@@ -1,6 +1,7 @@
 # :zap: Ionic Angular Charts
 
-* App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs). This is another great tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/watch?v=8sd99RJeYSk).
+* App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs).
+* Includes tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below + changes to show more API data using another http get request
 
 ## :page_facing_up: Table of contents
 
@@ -21,6 +22,7 @@
 * Tutorial code changed to show example financial data on initialisation and clear the stock entry field (MSFT is shown) as I preferred this to initially seeing an empty graph.
 * Tutorial code changed to avoid use of string literals - `const history = res['historical'];` caused a typescript error.
 * Note: I had to reverse both x and y array values (date & stock price) so data would not display backwards.
+* [FMP financial data API](https://financialmodelingprep.com/developer/docs) free plan limited to 250 requests a day.
 
 ## :camera: Screenshots
 
@@ -30,6 +32,7 @@
 
 * [Ionic v5](https://ionicframework.com/) framework.
 * [Ionic/angular v5](https://ionicframework.com/)
+* [Angular framework v11](https://angular.io/)
 * [rxjs library v6](https://angular.io/guide/rx-library) reactive prrogramming.
 * [ng2-charts v2](https://valor-software.com/ng2-charts/) line & bar charts.
 * [chart.js v2](https://www.chartjs.org/) datasets.
@@ -38,8 +41,10 @@
 
 ## :floppy_disk: Setup
 
+* Install dependencies using `npm i`
 * API key: sign up with [FMP financial data API](https://financialmodelingprep.com) to get an API key.
 * To start the server on _localhost://8100_ type: 'ionic serve -o'
+* Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## :computer: Code Examples
 
@@ -67,11 +72,11 @@ getData() {
 ## :cool: Features
 
 * ng2-charts has 8 types of charts: line, bar, radar, pie, polarArea, doughnut, bubble and scatter. In this app the user can choose between line (default) and bar charts.
-* upated to latest Ionic 5 & Angular 10, no dependency conflicts
+* updated to latest Ionic 5 & Angular 11, no dependency conflicts
 
 ## :clipboard: Status & To-do list
 
-* Status: Working.
+* Status: Working. Passes linting.
 * To-do: develop into a more complex app. Add inputs for more variables such as start and end dates for history.
 
 ## :clap: Inspiration

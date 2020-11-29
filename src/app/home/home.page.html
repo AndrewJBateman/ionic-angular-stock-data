@@ -1,46 +1,75 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>
-      Data Charts
-    </ion-title>
-  </ion-toolbar>
+<ion-header *ngIf="companyProfile">
+	<ion-toolbar color="primary">
+		<ion-title> {{ companyProfile.companyName}} Stock Data </ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="stock" placeholder="Enter stock - AAPL, MSFT..."></ion-input>
-    <ion-button slot="end" expand="full" (click)="getData()" [disabled]="stock == ''">
-      <ion-icon slot="start" name="search"></ion-icon>
-      Search
-    </ion-button>
-  </ion-item>
+	<ion-item>
+		<ion-input
+			type="text"
+			[(ngModel)]="stock"
+			placeholder="Enter stock - AAPL, MSFT..."
+			minlength="4"
+		></ion-input>
+		<ion-button
+			slot="end"
+			expand="full"
+			(click)="getData()"
+			[disabled]="stock == ''"
+		>
+			<ion-icon slot="start" name="search"></ion-icon>
+			Search
+		</ion-button>
+	</ion-item>
 
-  <canvas baseChart
-    [datasets]="chartData"
-    [labels]="chartLabels"
-    [options]="chartOptions"
-    [colors]="chartColors"
-    [legend]="showLegend"
-    [chartType]="chartType">
-  </canvas>
+	<canvas
+		baseChart
+		[datasets]="chartData"
+		[labels]="chartLabels"
+		[options]="chartOptions"
+		[colors]="chartColors"
+		[legend]="showLegend"
+		[chartType]="chartType"
+	>
+	</canvas>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Settings</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-label>Line chart?</ion-label>
-        <ion-toggle (ionChange)="typeChanged($event)" checked></ion-toggle>
-      </ion-item>
-      <ion-item>
-        <ion-label>Show legend?</ion-label>
-        <ion-toggle [(ngModel)]="showLegend"></ion-toggle>
-      </ion-item>
-      <ion-item>
-        <ion-label>Background color</ion-label>
-        <ion-input type="text" [(ngModel)]="chartColors[0].backgroundColor"></ion-input>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+	<ion-card *ngIf="companyProfile">
+		<ion-card-content>
+			<ion-item>
+				<ion-avatar slot="start">
+					<img src="{{companyProfile.image}}" />
+				</ion-avatar>
+				<h1>{{companyProfile.companyName}}</h1>
+			</ion-item>
+			<ion-item>
+				<ion-label color="dark">Sector:</ion-label>
+				<p>{{companyProfile.sector}}</p>
+			</ion-item>
+			<ion-item>
+				<ion-label color="dark">Industry:</ion-label>
+				<p>{{companyProfile.industry}}</p>
+			</ion-item>
+			<ion-item>
+				<ion-label color="dark">CEO:</ion-label>
+				<p>{{companyProfile.ceo}}</p>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label color="tertiary">Line chart?</ion-label>
+				<ion-toggle (ionChange)="typeChanged($event)" checked></ion-toggle>
+			</ion-item>
+			<ion-item>
+				<ion-label color="tertiary">Background color</ion-label>
+				<ion-input
+					type="text"
+					[(ngModel)]="chartColors[0].backgroundColor"
+				></ion-input>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
 </ion-content>
