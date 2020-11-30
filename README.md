@@ -1,7 +1,7 @@
 # :zap: Ionic Angular Charts
 
 * App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs).
-* Includes tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below + changes to show more API data using another http get request
+* Includes tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below. Changes added to show more API data using another http get request
 
 ## :page_facing_up: Table of contents
 
@@ -71,8 +71,8 @@ getData() {
 
 ## :cool: Features
 
-* ng2-charts has 8 types of charts: line, bar, radar, pie, polarArea, doughnut, bubble and scatter. In this app the user can choose between line (default) and bar charts.
-* updated to latest Ionic 5 & Angular 11, no dependency conflicts
+* ng2-charts has 10 types of charts: line, bar, doughnut, radar, pie, polarArea, bubble, scatter, dynamic & financial. In this app the user can choose between line (default) and bar charts.
+* updated to latest Ionic 5 & Angular 11, no vulnerabilities
 
 ## :clipboard: Status & To-do list
 
