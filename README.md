@@ -71,7 +71,7 @@ getData() {
 
 ## :cool: Features
 
-* ng2-charts has 8 types of charts: line, bar, radar, pie, polarArea, doughnut, bubble and scatter. In this app the user can choose between line (default) and bar charts.
+* ng2-charts has 10 types of charts: line, bar, doughnut, radar, pie, polarArea, bubble, scatter, dynamic & financial. In this app the user can choose between line (default) and bar charts.
 * updated to latest Ionic 5 & Angular 11, no dependency conflicts
 
 ## :clipboard: Status & To-do list
