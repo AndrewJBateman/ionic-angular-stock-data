@@ -82,7 +82,7 @@ getData() {
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Updated juune 2021. Passes linting.
+* Status: Working. Updated june 2021. Passes linting.
 * To-do: develop into a more complex app. Add inputs for more variables such as start and end dates for history.
 
 ## :clap: Inspiration
