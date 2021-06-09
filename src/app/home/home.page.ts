@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { ChartDataSets } from "chart.js";
 import { Color, Label } from "ng2-charts";
+import { environment } from "../../environments/environment";
+import { Observable } from "rxjs";
 
 @Component({
 	selector: "app-home",
@@ -9,12 +11,13 @@ import { Color, Label } from "ng2-charts";
 	styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit {
-	API_KEY = "";
+	API_KEY = environment.API_KEY;
 	baseUrl = "https://financialmodelingprep.com/api/v3";
 	// Data
 	chartData: ChartDataSets[] = [{ data: [], label: "Stock price" }];
 	chartLabels: Label[];
-	companyProfile = [];
+	companyProfile$: Observable<any>;
+	companyProfile: [];
 	companyName = "";
 
 	// Options, including zoom plugin options
@@ -62,7 +65,6 @@ export class HomePage implements OnInit {
         `
 			)
 			.subscribe((res) => {
-				console.log("res: ", res);
 				const key = "historical";
 				const history = res[key];
 
@@ -75,25 +77,15 @@ export class HomePage implements OnInit {
 				}
 				this.chartLabels.reverse();
 				this.chartData[0].data.reverse();
-				console.log("chart data: ", this.chartData[0].data);
-				console.log("history: ", history);
 			});
 
-		this.http
-			.get(
-				`
-        ${this.baseUrl}/profile/${this.stock}?apikey=${this.API_KEY}
-        `
-			)
-			.subscribe((res: any) => {
-				console.log("result of profile search: ", res);
-				this.companyProfile = res[0];
-				console.log("company profile: ", this.companyProfile);
-			});
+		this.companyProfile$ = this.http.get(
+			`${this.baseUrl}/profile/${this.stock}?apikey=${this.API_KEY}`
+		);
 	}
 
 	typeChanged(event: any) {
 		const on = event.detail.checked;
-		this.chartType = on ? "line" : "bar";
+		this.chartType = on ? "bar" : "line";
 	}
 }
