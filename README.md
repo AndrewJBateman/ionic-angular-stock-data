@@ -2,6 +2,12 @@
 
 * App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs).
 * Includes tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below. Changes added to show more API data using another http get request
+* **Note:** to open web links in a new window use: _ctrl+click on link_
+
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/ionic-angular-stock-data?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/ionic-angular-stock-data?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/ionic-angular-stock-data?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/ionic-angular-stock-data?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -15,6 +21,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-do list](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -32,11 +39,11 @@
 
 * [Ionic v5](https://ionicframework.com/) framework.
 * [Ionic/angular v5](https://ionicframework.com/)
-* [Angular framework v11](https://angular.io/)
+* [Angular framework v12](https://angular.io/)
 * [rxjs library v6](https://angular.io/guide/rx-library) reactive prrogramming.
 * [ng2-charts v2](https://valor-software.com/ng2-charts/) line & bar charts.
 * [chart.js v2](https://www.chartjs.org/) datasets.
-* [chartjs-plugin-zoom v0.7.7](https://github.com/chartjs/chartjs-plugin-zoom)
+* [chartjs-plugin-zoom v1.0.1](https://github.com/chartjs/chartjs-plugin-zoom)
 * [FMP financial data API](https://financialmodelingprep.com/developer/docs)
 
 ## :floppy_disk: Setup
@@ -72,11 +79,10 @@ getData() {
 ## :cool: Features
 
 * ng2-charts has 10 types of charts: line, bar, doughnut, radar, pie, polarArea, bubble, scatter, dynamic & financial. In this app the user can choose between line (default) and bar charts.
-* updated to latest Ionic 5 & Angular 11, no vulnerabilities
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Passes linting.
+* Status: Working. Updated juune 2021. Passes linting.
 * To-do: develop into a more complex app. Add inputs for more variables such as start and end dates for history.
 
 ## :clap: Inspiration
@@ -86,6 +92,10 @@ getData() {
 * [Github repo: antoinevulcain/Financial-Modeling-Prep-API](https://github.com/antoinevulcain/Financial-Modeling-Prep-API)
 * [JavaScript Array reverse() Method](https://www.w3schools.com/jsref/jsref_reverse.asp)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
