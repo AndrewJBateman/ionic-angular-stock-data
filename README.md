@@ -1,6 +1,6 @@
 # :zap: Ionic Angular Charts
 
-* App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic 5 framework](https://ionicframework.com/docs).
+* App to chart historic stock prices from the [FMP financial data API](https://financialmodelingprep.com/developer/docs) using the [Ionic framework](https://ionicframework.com/docs).
 * Includes tutorial from [Simon Grimm at Devdactic](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below. Changes added to show more API data using another http get request
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -26,9 +26,10 @@
 
 ## :books: General info
 
-* Tutorial code changed to show example financial data on initialisation and clear the stock entry field (MSFT is shown) as I preferred this to initially seeing an empty graph.
+* Tutorial code changed to show example financial data on initialisation and clear the stock entry field (TSLA is shown) as I preferred this to initially seeing an empty graph.
 * Tutorial code changed to avoid use of string literals - `const history = res['historical'];` caused a typescript error.
 * Note: I had to reverse both x and y array values (date & stock price) so data would not display backwards.
+* **Important note on versions**: This only works with ng2-charts v2.4.2, chart.js v2.9.4 and chartjs-plugin-zoom v0.7.7. Updating to the latest versions of these chart-based dependencies will mean this app does NOT work without major reconfiguration.
 * [FMP financial data API](https://financialmodelingprep.com/developer/docs) free plan limited to 250 requests a day.
 
 ## :camera: Screenshots
@@ -37,13 +38,13 @@
 
 ## :signal_strength: Technologies
 
-* [Ionic v5](https://ionicframework.com/) framework.
-* [Ionic/angular v5](https://ionicframework.com/)
-* [Angular framework v12](https://angular.io/)
-* [rxjs library v6](https://angular.io/guide/rx-library) reactive prrogramming.
+* [Ionic v6](https://ionicframework.com/) framework.
+* [Ionic/angular v6](https://ionicframework.com/)
+* [Angular framework v13](https://angular.io/)
+* [rxjs library v7](https://angular.io/guide/rx-library) reactive prrogramming.
 * [ng2-charts v2](https://valor-software.com/ng2-charts/) line & bar charts.
 * [chart.js v2](https://www.chartjs.org/) datasets.
-* [chartjs-plugin-zoom v1.0.1](https://github.com/chartjs/chartjs-plugin-zoom)
+* [chartjs-plugin-zoom v0.7.7](https://github.com/chartjs/chartjs-plugin-zoom)
 * [FMP financial data API](https://financialmodelingprep.com/developer/docs)
 
 ## :floppy_disk: Setup
@@ -51,7 +52,7 @@
 * Install dependencies using `npm i`
 * API key: sign up with [FMP financial data API](https://financialmodelingprep.com) to get an API key.
 * To start the server on _localhost://8100_ type: 'ionic serve -o'
-* Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## :computer: Code Examples
 
@@ -62,7 +63,7 @@ getData() {
   this.http
     .get(`
       https://financialmodelingprep.com/api/v3/historical-price-full/
-      ${this.stock}?from=2018-03-12&to=2019-03-12`).subscribe(res => {
+      ${this.stock}?to=2022-02-02&from=2017-02-02`).subscribe(res => {
         const history = res['historical'];
 
         this.chartLabels = [];
@@ -82,8 +83,8 @@ getData() {
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Updated june 2021. Passes linting.
-* To-do: develop into a more complex app. Add inputs for more variables such as start and end dates for history.
+* Status: Working.
+* To-do: develop into a more complex app. Add inputs for more variables such as start and end dates for history. Add ESLint.
 
 ## :clap: Inspiration
 
