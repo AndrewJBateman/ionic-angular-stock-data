@@ -40,7 +40,7 @@
 
 * [Ionic v6](https://ionicframework.com/) framework.
 * [Ionic/angular v6](https://ionicframework.com/)
-* [Angular framework v13](https://angular.io/)
+* [Angular framework v14](https://angular.io/)
 * [rxjs library v7](https://angular.io/guide/rx-library) reactive prrogramming.
 * [ng2-charts v2](https://valor-software.com/ng2-charts/) line & bar charts.
 * [chart.js v2](https://www.chartjs.org/) datasets.
@@ -51,6 +51,7 @@
 
 * Install dependencies using `npm i`
 * API key: sign up with [FMP financial data API](https://financialmodelingprep.com) to get an API key.
+* Add API key to environments files
 * To start the server on _localhost://8100_ type: 'ionic serve -o'
 * Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
